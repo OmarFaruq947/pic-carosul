@@ -28,16 +28,19 @@ const showImages = (images) => {
 
 }
 
+document.getElementById("search").addEventListener("keypress", function(event){
+  if(event.key === 'Enter'){
+    document.getElementById("search-btn").click();
+  }
+});
+
 const getImages = (query) => {
-
   toggleSpinner(true);
-
   fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
     .then(response => response.json())
     .then(data => showImages(data.hits))
     .catch(err => console.log(err))
 }
-
 let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
@@ -51,8 +54,6 @@ const selectItem = (event, img) => {
   }
 }
 
-
-
 var timer
 const createSlider = () => {   // check it
   // check slider image length
@@ -65,13 +66,12 @@ const createSlider = () => {   // check it
   const prevNext = document.createElement('div');
   prevNext.className = "prev-next d-flex w-100 justify-content-between align-items-center";
   prevNext.innerHTML = ` 
-  <span class="prev" onclick="changeItem(-1)"><i class="fas fa-chevron-left"></i></span>
+  <span class="prev" onclick="changeItem(1)"><i class="fas fa-chevron-left"></i></span>
   <span class="next" onclick="changeItem(1)"><i class="fas fa-chevron-right"></i></span>
   `;
 
   sliderContainer.appendChild(prevNext)
 
-  
   document.querySelector('.main').style.display = 'block';
   // hide image aria
   imagesArea.style.display = 'none';
@@ -85,11 +85,6 @@ const createSlider = () => {   // check it
     sliderContainer.appendChild(item)
   })
   
-
-
-
-
-
   changeSlide(0)
     timer = setInterval(function () {
       slideIndex++;
@@ -139,8 +134,6 @@ sliderBtn.addEventListener('click', function () {
 })
 
 
-
-
 function numbersOnly(event) {
   return event.charCode === 0 || /\d/.test(String.fromCharCode(event.charCode));
 }
@@ -152,8 +145,6 @@ input.onkeypress = numbersOnly;
 input.onpaste = event => false;
 
 
-
-
 // spinner_item
 const toggleSpinner=(show)=>{
   const spinner=document.getElementById("loading-spinner");
@@ -163,7 +154,5 @@ const toggleSpinner=(show)=>{
  else{
     spinner.classList.add('d-none');
  }
-  
-  
-  
+
 }

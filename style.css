@@ -1,7 +1,6 @@
 body{
   background-color: #1d2630;
 }
-
 #sliders {
   height: 400px;
   width: 60%;
@@ -9,29 +8,23 @@ body{
   margin: 0 auto;
   position: relative;
 }
-
 .gallery-header {
   display: none;
 }
-
 .slider-item {
   display: none;
 }
-
 .img-thumbnail {
   cursor: pointer;
 }
-
 .added {
-  border: 2px solid #1e1743;
+  border: 3px solid #007BFF;
   border-radius: 5px;
 }
-
 img {
   height: 400px;
   object-fit: cover;
 }
-
 .prev-next {
   position: absolute;
   top: 50%;
@@ -39,13 +32,11 @@ img {
   transform: translateX(-50%) translateY(-50%);
   cursor: pointer;
 }
-
 .prev, .next {
   background-color: transparent;
   padding: 8px 10px;
   color: #fff;
 }
-
 .dot {
   background-color: rgb(163, 156, 156);
   height: 10px;
@@ -54,11 +45,9 @@ img {
   cursor: pointer;
   margin: 0 3px;
 }
-
 .main {
   display: none;
 }
-
 @media (max-width: 767px) {
   .justify-content-around.align-items-center.mt-3.gallery-header.mb-2 {
     flex-direction: column;
@@ -69,31 +58,7 @@ img {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* KEYFRAMES */
-
 @keyframes spin {
   from {
     transform: rotate(0);
@@ -102,7 +67,6 @@ img {
     transform: rotate(359deg);
   }
 }
-
 @keyframes spin3D {
   from {
     transform: rotate3d(.5,.5,.5, 360deg);
@@ -111,7 +75,6 @@ img {
     transform: rotate3d(0deg);
   }
 }
-
 @keyframes configure-clockwise {
   0% {
     transform: rotate(0);
@@ -129,7 +92,6 @@ img {
     transform: rotate(360deg);
   }
 }
-
 @keyframes configure-xclockwise {
   0% {
     transform: rotate(45deg);
@@ -147,7 +109,6 @@ img {
     transform: rotate(-315deg);
   }
 }
-
 @keyframes pulse {
   from {
     opacity: 1;
@@ -160,11 +121,9 @@ img {
 }
 
 /* GRID STYLING */
-
 * {
   box-sizing: border-box;
 }
-
 
 .spinner_curcle{
     display: grid;
@@ -183,13 +142,6 @@ img {
 }
 
 /* SPINNING CIRCLE */
-
-
-
-
-
-/* ALTERNATING ORBITS */
-
 .circle-border {
   width: 150px;
   height: 150px;
@@ -202,7 +154,6 @@ img {
   background: linear-gradient(0deg, rgba(63,249,220,0.1) 33%, rgba(63,249,220,1) 100%);
   animation: spin .8s linear 0s infinite;
 }
-
 .circle-core {
   width: 100%;
   height: 100%;
@@ -212,13 +163,6 @@ img {
 
 
 
-
-
-
-
-/* footer */
-
-/* Footer */
 section {
     padding: 60px 0;
 }
@@ -272,14 +216,3 @@ section .section-title {
 	-moz-transition: .5s all ease;
 	transition: .5s all ease;
 }
-
-
-
-
-
-
-
-
-
-
-
